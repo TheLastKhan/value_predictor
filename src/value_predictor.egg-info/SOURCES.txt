@@ -1,0 +1,10 @@
+LICENSE
+README.md
+pyproject.toml
+src/value_predictor/__init__.py
+src/value_predictor/value_predictor.py
+src/value_predictor.egg-info/PKG-INFO
+src/value_predictor.egg-info/SOURCES.txt
+src/value_predictor.egg-info/dependency_links.txt
+src/value_predictor.egg-info/top_level.txt
+tests/test_value_predictor.py

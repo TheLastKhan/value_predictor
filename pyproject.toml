@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "value_predictor"
+version = "0.0.1"
+authors = [
+    { name = "Hakan Sinal", email = "hakansinal1@gmail.com" },
+]
+description = "A simple package for predicting value."
+readme = "README.md"
+keywords = ["hakan", "value_predictor"]
+requires-python = ">=3.6.0"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/TheLastKhan"

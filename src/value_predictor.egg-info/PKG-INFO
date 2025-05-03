@@ -1,0 +1,20 @@
+Metadata-Version: 2.4
+Name: value_predictor
+Version: 0.0.1
+Summary: A simple package for predicting value.
+Author-email: Hakan Sinal <hakansinal1@gmail.com>
+Project-URL: Homepage, https://github.com/TheLastKhan
+Keywords: hakan,value_predictor
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Programming Language :: Python :: 3
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.6.0
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
+
+# value_predictor
+This is a test package 
+for the PyPi tutorial.
