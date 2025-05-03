@@ -21,4 +21,6 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/TheLastKhan"
+Homepage = "https://github.com/TheLastKhan/value_predictor"
+Release = "https://github.com/TheLastKhan/value_predictor/releases/tag/v1.0.0"
+
