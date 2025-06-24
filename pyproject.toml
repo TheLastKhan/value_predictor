@@ -1,26 +1,77 @@
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["setuptools>=61.0", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "value_predictor"
-version = "0.0.1"
+version = "1.0.0"
 authors = [
     { name = "Hakan Sinal", email = "hakansinal1@gmail.com" },
 ]
-description = "A simple package for predicting value."
+
+description = "Financial asset value transfer analysis and prediction system"
+
 readme = "README.md"
-keywords = ["hakan", "value_predictor"]
-requires-python = ">=3.6.0"
+license = {text = "MIT"}
+keywords = ["finance", "machine-learning", "prediction", "correlation", "data-science", "value_predictor"]
+requires-python = ">=3.8"
+
 classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Developers",
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Financial and Insurance Industry",
+    "Intended Audience :: Science/Research",
     "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3",
     "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Office/Business :: Financial :: Investment",
+]
+
+dependencies = [
+    "pandas>=1.3.0",
+    "numpy>=1.21.0",
+    "scikit-learn>=1.0.0",
+    "matplotlib>=3.4.0",
+    "seaborn>=0.11.0",
+    "flask>=2.0.0",
+    "flask-cors>=3.0.0",
+    "plotly>=5.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0",
+    "pytest-cov>=2.0",
+    "black>=21.0",
+    "flake8>=3.9",
 ]
 
 [project.urls]
 Homepage = "https://github.com/TheLastKhan/value_predictor"
+Repository = "https://github.com/TheLastKhan/value_predictor.git"
 Release = "https://github.com/TheLastKhan/value_predictor/releases/tag/v1.0.0"
+Documentation = "https://github.com/TheLastKhan/value-predictor#readme"
+"Bug Tracker" = "https://github.com/TheLastKhan/value-predictor/issues"
 
+[project.scripts]
+value-predictor = "value_predictor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"

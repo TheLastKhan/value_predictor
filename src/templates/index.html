@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Value Transfer Analysis & Prediction System</title>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.26.0/plotly.min.js"></script>
+    <link rel="stylesheet" href="/src/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💰 Financial Value Transfer Analysis</h1>
+            <p>Discover value transfer relationships between assets and predict future values</p>
+        </div>
+
+        <div class="tabs">
+            <button class="tab active" onclick="showTab('prediction')">📈 Prediction Analysis</button>
+            <button class="tab" onclick="showTab('correlation')">🔗 Correlation Analysis</button>
+            <button class="tab" onclick="showTab('comparison')">⚖️ Asset Comparison</button>
+            <button class="tab" onclick="showTab('history')">📊 Price History</button>
+        </div>
+
+        <!-- Prediction Analysis Tab -->
+        <div id="prediction" class="tab-content active">
+            <div class="dashboard">
+                <div class="card">
+                    <h3>🎯 Value Prediction System</h3>
+                    <div class="controls">
+                        <select id="assetSelect">
+                            <option value="">Select asset...</option>
+                        </select>
+                        <button onclick="predictAsset()">Make Prediction</button>
+                    </div>
+                    <div id="predictionResult"></div>
+                </div>
+
+                <div class="card">
+                    <h3>📊 Prediction Chart</h3>
+                    <div id="predictionChart" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Correlation Analysis Tab -->
+        <div id="correlation" class="tab-content">
+            <div class="dashboard">
+                <div class="card">
+                    <h3>🔗 Value Transfer Relationships</h3>
+                    <button onclick="loadCorrelations()">Perform Correlation Analysis</button>
+                    <div id="correlationResults"></div>
+                </div>
+
+                <div class="card">
+                    <h3>🗺️ Correlation Heatmap</h3>
+                    <div id="correlationHeatmap" class="chart-container"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Asset Comparison Tab -->
+        <div id="comparison" class="tab-content">
+            <div class="card full-width">
+                <h3>⚖️ Two Asset Comparison</h3>
+                <div class="controls">
+                    <select id="asset1Select">
+                        <option value="">First asset...</option>
+                    </select>
+                    <select id="asset2Select">
+                        <option value="">Second asset...</option>
+                    </select>
+                    <button onclick="compareAssets()">Compare</button>
+                </div>
+                <div id="comparisonResult"></div>
+                <div id="comparisonChart" class="chart-container"></div>
+            </div>
+        </div>
+
+        <!-- Price History Tab -->
+        <div id="history" class="tab-content">
+            <div class="card full-width">
+                <h3>📊 Price History Analysis</h3>
+                <div class="controls">
+                    <select id="historyAssets" multiple>
+                        <option value="Bitcoin">Bitcoin</option>
+                        <option value="Gold">Gold</option>
+                        <option value="Silver">Silver</option>
+                        <option value="Copper">Copper</option>
+                        <option value="Platinum">Platinum</option>
+                        <option value="Palladium">Palladium</option>
+                        <option value="Aluminium">Aluminium</option>
+                        <option value="Lead">Lead</option>
+                        <option value="Zinc">Zinc</option>
+                        <option value="Nickel">Nickel</option>
+                        <option value="Tin">Tin</option>
+                        <option value="BrentOil">BrentOil</option>
+                        <option value="CrudeOil">CrudeOil</option>
+                        <option value="HeatingOil">HeatingOil</option>
+                        <option value="Gasoline">Gasoline</option>
+                        <option value="NaturalGas">NaturalGas</option>
+                        <option value="US30">US30</option>
+                        <option value="US500">US500</option>
+                        <option value="SP500">S&P500</option>
+                        <option value="DowJones">DowJones</option>
+                        <option value="NASDAQ">NASDAQ</option>
+                        <option value="CBOE">CBOE</option>
+                        <option value="USDollarIndex">USDollarIndex</option>
+                    </select>
+                    <button onclick="loadHistory()">Create Chart</button>
+                </div>
+                <div id="historyChart" class="chart-container"></div>
+            </div>
+        </div>
+    </div>
+    <script src="/src/static/script.js"></script>
+</body>
+</html>
